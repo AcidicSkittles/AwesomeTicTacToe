@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+var players=[];
+var scores=[];
+var moves=[];
+function setPlayers(newplayers){
+	players=newplayers;
+	document.getElementById("players").innerHTML=players.join(",");
+}
+function setPlayerMoves(newmoves){
+	moves=newmoves;
+	document.getElementById("last_move").innerHTML=moves.join(",");
+}
+function displayWinner(id){
+	document.getElementById("winner").innerHTML=players[id]+" won!";
+}
+function handleOnSubmit(){
+	var row=document.getElementById("selection1");
+	var column=document.getElementByID("select2");
+	var row_value=row.options[row.selectedIndex].value;
+	var column_value=column.options[column.selectedIndex].value;
+	if(value){
+		client.sendMove(row_value, column_value);
+	}
+}
+
+</script>
+</head>
+<body>
+Awesome Tic Tac Toe
+<h1 id="winner"></h1>
+<div id="players"></div>
+<div id="last_move"></div>
+<select id="selection1">
+	<option value="" selected>---</option>
+	<option value="1">Row 1</option>
+	<option value="2">Row 2</option>
+	<option value="3">Row 3</option>
+	<option value="4">Row 4</option>
+	<option value="5">Row 5</option>
+</body>
+<select id="selection2">
+	<option value="" selected>---</option>
+	<option value="1">Column 1</option>
+	<option value="2">Column 2</option>
+	<option value="3">Column 3</option>
+	<option value="4">Column 4</option>
+	<option value="5">Column 5</option>
+</body>
+<button onclick="handleOnChSubmit()">Make Move</button>
+</html>
