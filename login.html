@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html class="login">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="awesome.css" />
+	<script type="text/javascript" src="login.js"></script>
+	<title>Welcome to Awesome 5x5 Tic Tac Toe</title>
+</head>
+
+<!-- Background Border -->
+<div class="loginBackgroundBorder">
+
+	<!-- Pivott Logo -->
+	<img class="align-center medium" src="awesome_logo.png" alt="Awesome Logo" title="Awesome Logo">
+	<p></p>
+		<!-- JavaScript form to check valid login information -->
+		<form name="loginForm" onsubmit="return validateLogin()" action="/~jwryle2/home.html" method="post">
+			<!-- Username Input -->
+			<div class="loginUserInput">
+				<label for="username">Username:</label>
+				<input type="text" class="loginInput" name="email" placeholder="Email" />
+			</div>
+			<div class="loginErrors">
+				<label id="emailErrors" class="errors"></label>
+			</div>
+
+			<!-- Password Input -->
+			<div class="loginUserInput">
+				<label for="password">Password:</label>
+				<input type="password" class="loginInput" name="password" placeholder="Password" />
+			</div>
+			<div class="loginErrors">
+				<label id="passwordErrors" class="errors"></label>
+			</div>
+
+			<!-- Submit Buttons -->
+			<div class="loginSubmitInput">
+
+				<input type="submit" value="Login" class="loginSubmitButton" />
+
+				<a href="/~jwryle2/register.html">
+				<input type="button" value="Register" class="loginSubmitButton" />
+				</a>
+			</div>
+		</form>
+
+<!-- End of Login Border -->
+</div>
+
+</html>
+

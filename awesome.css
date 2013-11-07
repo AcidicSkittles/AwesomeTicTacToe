@@ -1,0 +1,257 @@
+/*
+ This is the entire website css stylesheet for the Pivott website 
+ One thing to note is that most styles are the same throughout each 
+ of the HTML pages, so the initial page (login.html) will be included
+ in most of the class descriptor names (i.e. div.loginBackgroundBorder)
+*/
+
+/* Login Page */
+
+/* Controls login page (back layer) background */
+html.login
+{
+  /* fallback */
+  background-color: #999999;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  /* Safari 4-5, Chrome 1-9 */
+  /* Can't specify a percentage size? Laaaaaame. */
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ffffff), to(#999999));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background: -webkit-radial-gradient(circle, #ffffff, #999999);
+
+  /* Firefox 3.6+ */
+  background: -moz-radial-gradient(circle, #ffffff, #999999);
+
+  /* IE 10 */
+  background: -ms-radial-gradient(circle, #ffffff, #999999);
+	font-family: Verdana;
+	font-size: 10pt;
+}
+/* Error message format */
+div.loginErrors
+{
+	margin: 0 auto;
+	text-align: center;
+}
+/* Error label format */
+label.errors
+{
+	display: inline-block;
+	margin: auto auto;
+	font-size: 6pt;
+	color: Red;
+}
+/* Controls login page background border (white box) */
+div.loginBackgroundBorder
+{
+	margin: auto auto;
+	width: 400px;
+	height: 400px;
+	/*background-color: White;
+	border-radius: 4em;*/
+}
+/* Center images */
+img.align-center
+{
+	display: block;
+	margin: auto auto;
+	padding-top: 20px;
+}
+/* Set standard medium size for all images */
+img.medium
+{
+	width: 275px;
+	height: 125px;
+}
+/* Format for login page user input form */
+div.loginUserInput
+{
+	margin: 0 auto;
+	padding: 7px;
+	width: 200px;
+}
+/* For user input textboxes for Username & Password for login page */
+input.loginInput
+{
+	float: right;
+	width: 100px;
+	text-align: left;
+	padding-right: 10px;
+}
+/* Format submit button container/box (div) on login page */
+div.loginSubmitInput
+{
+	margin: auto auto;
+	padding: 10px;
+	width: 200px;
+	text-align: center;
+}
+/* Format for each submit button on login page */
+input.loginSubmitButton
+{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+/* To display centered Pivott Logo on login page */
+div.loginImageButton
+{
+	margin: auto auto;
+	padding: 10px;
+}
+/* Format Facebook/Twitter image buttons */
+input.loginButtonImage
+{
+	display: block;
+	width: 150px;
+	height: 25px;
+	border-radius: 0.75em;
+	margin: auto auto;
+}
+
+/* Register Page */
+
+/* Format box for register page user input */
+div.registerUserInput
+{
+	margin: 0 auto;
+	padding: 8px;
+	width: 250px;
+}
+
+/* Validate Page */
+
+/* Format box for validation page user input */
+div.validateUserInput
+{
+	text-align: center;
+	margin: auto auto;
+	padding-top: 15px;
+	width: 300px;
+}
+/* Format box for validation code box */
+div.validateInput
+{
+	width: 100px;
+	text-align: left;
+	margin 10px;
+}
+/* Format box for submit buttons on the screen */
+div.validateSubmitInput
+{
+	margin: auto auto;
+	padding: 10px;
+	width: 200px;
+	text-align: center;
+}
+
+/* Base/Nav Page */
+
+/* Background Color for our "Main" page */
+html.base
+{
+	text-align:center;
+  /* fallback */
+  background-color: #999999;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  /* Safari 4-5, Chrome 1-9 */
+  /* Can't specify a percentage size? Laaaaaame. */
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ffffff), to(#999999));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background: -webkit-radial-gradient(circle, #ffffff, #999999);
+
+  /* Firefox 3.6+ */
+  background: -moz-radial-gradient(circle, #ffffff, #999999);
+
+  /* IE 10 */
+  background: -ms-radial-gradient(circle, #ffffff, #999999);
+
+	background-color: White;
+}
+/* Align images to the left side of the screen */
+img.align-left
+{
+	float: left;
+	display: block;
+	padding-left: 10px;
+	padding-right: 20px;
+}
+/* Assign these values as small images used throughout site */
+img.small
+{
+	width: 137.5px;
+	height: 62.5px;
+}
+/* Normal links are: Home, Profile, Settings, and About Us */
+/* Only difference is that these are lined up to the left */
+/* and loginLink is lined up to theh right */
+header.nav{
+	margin: auto;
+	width:700px;
+	text-align:center;
+}
+
+body
+{
+	margin:50px 0px; padding:0px;
+	text-align:center;
+}
+
+div.wrapper{
+	width:700px;
+	margin:0px auto;
+	text-align:left;
+}
+
+.baseNormalLink
+{
+	float: left;
+	padding-top: 34px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: Trebuchet Ms;
+
+}
+/* Logout link is aligned to the right of the screen */
+.baseLogoutLink
+{
+	float: right;
+	padding-top: 34px;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: Trebuchet Ms;
+}
+/* Normal link color (Set as Grey color)
+a.navLinks:link
+{
+	color: rgb(76,76,76);
+	text-decoration: none;
+}
+/* Already visited links (stay grey) */
+/* Reason why we changed was that default was purple */
+a.navLinks:visited
+{
+	color: rgb(76,76,76);
+	text-decoration: none;
+}
+/* When you hover over a link, color turns to Pivott Green */
+a.navLinks:hover
+{
+	color: rgb(27,184,193);
+	/*text-decoration: underline;*/
+}
+/* When you are in action of clicking link color is Blue */
+a.navLinks:active
+{
+	color: Blue;
+	text-decoration: none;
+}

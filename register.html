@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html class="login">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="awesome.css">
+	<script type="text/javascript" src="register.js"></script>
+	<title>Awesome Registration</title>
+</head>
+
+<!-- Background Border -->
+<div class="loginBackgroundBorder">
+
+	<!-- Pivott Logo -->
+	<img class="align-center medium" src="awesome_logo.png" alt="Awesome Logo" title="Awesome Logo">
+
+	<!-- JavaScript form to check valid registration information -->
+	<form name="registerForm" onsubmit="return validateRegistration()" method="post" action="/~jwryle2/home.html" >
+		<!-- Username Input -->
+		<div class="registerUserInput">
+			<label for="username">Username:</label>
+			<input type="text" class="loginInput" name="email" placeholder="Email" />
+		</div>
+		<div class="loginErrors">
+			<label id="emailErrors" class="errors"></label>
+		</div>
+
+		<!-- Password Input -->
+		<div class="registerUserInput">
+			<label for="password">Password:</label>
+			<input type="password" class="loginInput" name="password" placeholder="Password" />
+		</div>
+		<div class="loginErrors">
+			<label id="passwordErrors" class="errors"></label>
+		</div>
+
+		<!-- Confirm Password -->
+		<div class="registerUserInput">
+			<label for="passwordConf">Confirm Password:</label>
+			<input type="password" class="loginInput" name="passwordConf" placeholder="Password" />
+		</div>
+		<div class="loginErrors">
+			<label id="passwordConfErrors" class="errors"></label>
+		</div>
+
+		<!-- Enter First Name -->
+		<div class="registerUserInput">
+			<label for="firstName">First Name:</label>
+			<input type="firstName" class="loginInput" name="firstName" placeholder="First Name" />
+		</div>
+		<div class="loginErrors">
+			<label id="firstNameErrors" class="errors"></label>
+		</div>
+
+		<!-- Enter Last Name -->
+		<div class="registerUserInput">
+			<label for="lastname">Last Name:</label>
+			<input type="lastName" class="loginInput" name="lastName" placeholder="Last Name" />
+		</div>
+		<div class="loginErrors">
+			<label id="lastNameErrors" class="errors"></label>
+		</div>
+
+		<!-- Submit Buttons -->
+		<div class="loginSubmitInput">
+			<input type="submit" value="Register" class="loginSubmitButton" />
+			<!--<input type="button" value="Register" class="loginSubmitButton" />-->
+		</div>
+	
+	</form>
+
+<!-- End of Login Border -->
+</div>
+
+</html>
+
