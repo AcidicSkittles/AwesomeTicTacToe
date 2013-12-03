@@ -9,7 +9,7 @@
       $username = $_SESSION["user"];
       $password = $_SESSION["pass"];
 
-      $q = "SELECT id FROM `members` WHERE (username = '$username') and (password = '$password')";
+      $q = "SELECT id FROM `users` WHERE (username = '$username') and (password = '$password')";
       if(!($result_set = mysql_query($q))) die(mysql_error());
       $number = mysql_num_rows($result_set);
 
@@ -23,6 +23,8 @@
       }
    }
    else
+   {
       $session = false;
+   }
 
 ?>

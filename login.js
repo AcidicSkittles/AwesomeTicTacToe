@@ -10,18 +10,17 @@
 function validateLogin()
 {
 	// Store user entered email 
-	var email = document.forms["loginForm"]["email"].value;
+	var username = document.forms["loginForm"]["username"].value;
 
-	// Email pattern using regular expressions
-	// Same as Facebook's email pattern matching
-	var emailPattern = /^([\w!.%+\-])+@([\w\-])+(?:\.[\w\-]+)+$/;
+	// Usernames and passwords are limited to alphanumeric characters, underscores, pound signs, and periods
+	var pattern = /^[A-Za-z0-9_#.]*$/;
 
 	// Test for valid email
 	try
 	{	
 		// If invalid email
-		if(emailPattern.test(email) == false)
-			throw "Invalid email address entered\n";
+		if(pattern.test(username) == false)
+			throw "Invalid username entered\n";
 		else
 			throw ""; // Clear any previous error messages
 	}
