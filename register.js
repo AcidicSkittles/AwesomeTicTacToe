@@ -9,17 +9,21 @@
 function validateRegistration ()
 {
 	// Store Username/Password
-	var email = document.forms["registerForm"]["email"].value;
+	var username = document.forms["registerForm"]["username"].value;
 
 	// Email pattern using regular expressions
-	var emailPattern = /^([\w!.%+\-])+@([\w\-])+(?:\.[\w\-]+)+$/;
+	var pattern = /^[A-Za-z0-9_#.]*$/;
 
 	// Test for valid email
 	try
 	{
 		// If invalid email
-		if(emailPattern.test(email) == false)
-			throw "Invalid email address entered\n";
+		if(pattern.test(username) == false)
+			throw "Invalid username entered. Usernames can only be alphanumeric containing the # . or _ chars\n";
+		else if(username.length <3)
+			throw "Username needs to be at least 3 chars long.";
+		else if(username.length > 24)
+			throw "Username needs to be limited to 24 chars long.";
 		else
 			throw ""; // Clear any previous error messages
 	}
@@ -27,7 +31,7 @@ function validateRegistration ()
 	// If errors -> display underneath textbox as error
 	catch(err)
 	{
-		document.getElementById("emailErrors").innerHTML = err;
+		document.getElementById("usernameErrors").innerHTML = err;
 	}
 	
 	// Store user entered password
@@ -83,76 +87,10 @@ function validateRegistration ()
 		document.getElementById("passwordConfErrors").innerHTML = err;
 	}
 
-	// Check First/Last name inputs
-
-	// Store user entered first name
-	var firstName = document.forms["registerForm"]["firstName"].value;
-
-	// Store length of first name entry
-	var firstNameLength = firstName.length;
-
-	// Pattern for First name
-        var firstNamePattern = /^[a-zA-Z'-.]+$/;
-
-	// Check if valid length for new database entry
-	try
-	{
-		// Cannot be more than 15 characters
-		if(firstNameLength > 15)
-			throw "First name must be less than 16 characters\n";
-		// Cannot be left blank
-		else if(firstNameLength <= 0)
-			throw "First name must not be blank\n";	
-		// Check only alphabet characters
-		if(firstNamePattern.test(firstName) == false)
-			throw "First name must be only alphabets or - or ' characters only\n";
-		else
-			throw ""; // Clears any prior error messages
-	}
-	
-	// Display errors
-	catch(err)
-	{
-		document.getElementById("firstNameErrors").innerHTML = err;
-	}
-	
-	// Store user entered last name
-	var lastName = document.forms["registerForm"]["lastName"].value;
-
-	// Store length of last name entry
-	var lastNameLength = lastName.length;
-
-	// Pattern for Last name
-        var lastNamePattern = /^[a-zA-Z'-.]+$/;
-
-	// Check if valid length for new database entry
-	try
-	{
-		// Cannot be more than 20 characters
-		if(lastNameLength > 20)
-			throw "Last name must be less than 21 characters\n";
-		// Cannot be left blank
-		else if(lastNameLength <= 0)
-			throw "Last name must not be blank\n";
-		// Check only alphabet characters
-        	if(lastNamePattern.test(lastName) == false)
-                	throw "First name must be only alphabets or - or ' character\n";
-		else
-			throw ""; // Clears prior error messages
-	}
-
-	// Display errors
-	catch(err)
-	{
-		document.getElementById("lastNameErrors").innerHTML = err;	
-	}
-
 	// Check if no errors occured
-	if(document.getElementById("emailErrors").innerHTML == "" &&
+	if(document.getElementById("usernameErrors").innerHTML == "" &&
 		document.getElementById("passwordErrors").innerHTML == "" &&
-		document.getElementById("passwordConfErrors").innerHTML == "" &&
-		document.getElementById("firstNameErrors").innerHTML == "" &&
-		document.getElementById("lastNameErrors").innerHTML == "")
+		document.getElementById("passwordConfErrors").innerHTML == "")
 		{
 			return true;
 		}

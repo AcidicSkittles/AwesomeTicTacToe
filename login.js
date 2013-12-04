@@ -29,7 +29,7 @@ function validateLogin()
 	// Display then in template underneath textboxes
 	catch(err)
 	{
-		document.getElementById("emailErrors").innerHTML = err;
+		document.getElementById("usernameErrors").innerHTML = err;
 	}
 
 	// Store user entered password	
