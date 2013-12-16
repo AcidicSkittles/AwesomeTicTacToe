@@ -3,11 +3,11 @@
   $userid = "";
   $session = false;
 
-   if (isset($_SESSION["tictactoe"]))
+   if (isset($_SESSION["tictactoe-user"]))
    {
       $session = true;
-      $username = $_SESSION["user"];
-      $password = $_SESSION["pass"];
+      $username = $_SESSION["tictactoe-user"];
+      $password = $_SESSION["tictactoe-pass"];
 
       $q = "SELECT id FROM `users` WHERE (username = '$username') and (password = '$password')";
       if(!($result_set = mysql_query($q))) die(mysql_error());

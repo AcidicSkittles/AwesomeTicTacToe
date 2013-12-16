@@ -62,7 +62,7 @@ function validateLogin()
 	}
 
 	// Check if no errors occured 
-	if(document.getElementById("emailErrors").innerHTML == "" && document.getElementById("passwordErrors").innerHTML == "")
+	if(document.getElementById("usernameErrors").innerHTML == "" && document.getElementById("passwordErrors").innerHTML == "")
 		return true;
 	else
 		return false;

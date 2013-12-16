@@ -58,21 +58,24 @@ if (isset($_POST["username"]) && isset($_POST["password"]))
 {
 
     $username = mysql_real_escape_string(trim($_POST["username"]));
-    $password = mysql_real_escape_string(trim($_POST["password"]));
-   
-    $q = "SELECT username FROM `users` WHERE (username = '$username') and (password = '$password')";
-    if(!($result_set = mysql_query($q))) die(mysql_error());
-    $number = mysql_num_rows($result_set);
- 
-    if (!$number) 
-    {
-          echo '<script type="text/javascript">document.getElementById("passwordErrors").innerHTML = "Failed login, try again maybe?? Remember, your inputs are case sensitive."</script>'; 
-    } 
-    else 
-	{
-		header('Location: tictactoe.html');
-    }
-   
+    $password = md5(mysql_real_escape_string(trim($_POST["password"])));
+   if(strlen($username)>0 && strlen($password)>0)
+   {
+		$q = "SELECT username FROM `users` WHERE (username = '$username') and (password = '$password')";
+		if(!($result_set = mysql_query($q))) die(mysql_error());
+		$number = mysql_num_rows($result_set);
+	 
+		if (!$number) 
+		{
+			  echo '<script type="text/javascript">document.getElementById("passwordErrors").innerHTML = "Failed login, try again maybe?? Remember, your inputs are case sensitive."</script>'; 
+		} 
+		else 
+		{
+			$_SESSION["tictactoe-user"] = $username;
+			$_SESSION["tictactoe-pass"] = $password;
+			header('Location: main.php');
+		}
+   }
 }
 else
 {

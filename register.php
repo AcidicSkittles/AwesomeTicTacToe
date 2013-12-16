@@ -65,7 +65,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])&& isset($_POST["passw
 {
 
     $username = mysql_real_escape_string(trim($_POST["username"]));
-    $password = mysql_real_escape_string(trim($_POST["password"]));
+    $password = md5(mysql_real_escape_string(trim($_POST["password"])));
 	$passwordConf = mysql_real_escape_string(trim($_POST["passwordConf"]));
    
     $q = "SELECT username FROM `users` WHERE (username COLLATE latin1_swedish_ci = '$username')";
@@ -78,9 +78,9 @@ if (isset($_POST["username"]) && isset($_POST["password"])&& isset($_POST["passw
              else
 			 {
 								 
-				 
-                 //$q = "INSERT INTO `users` (username, password) VALUES('$username', '$password')"; 
-                 //mysql_query($q);
+				 $ipaddress = $_SERVER['REMOTE_ADDR'];
+                 $q = "INSERT INTO `users` (username, password, ip) VALUES ('$username', '$password', '$ipaddress')"; 
+                 mysql_query($q);
 				 
 		header('Location: index.php');
     }
